@@ -1,0 +1,68 @@
+[
+    {
+        "first_name": "adfa",
+        "last_name": "asdf",
+        "middle_name": "asdf",
+        "birth_date": "2026-09-01",
+        "sex": "M",
+        "sport": "swimming",
+        "rank": "1y",
+        "city": "Магнитогорск",
+        "team": "tema"
+    },
+    {
+        "first_name": "adfa",
+        "last_name": "asdf",
+        "middle_name": "asdf",
+        "birth_date": "2026-09-01",
+        "sex": "M",
+        "sport": "swimming",
+        "rank": "1y",
+        "city": "Магнитогорск",
+        "team": "tema"
+    },
+    {
+        "first_name": "asdf",
+        "last_name": "asdf",
+        "middle_name": "asdf",
+        "birth_date": "2026-09-03",
+        "sex": "M",
+        "sport": "football",
+        "rank": "none",
+        "city": "",
+        "team": ""
+    },
+    {
+        "first_name": "adfa",
+        "last_name": "asdf",
+        "middle_name": "asdf",
+        "birth_date": "2026-09-01",
+        "sex": "M",
+        "sport": "swimming",
+        "rank": "1y",
+        "city": "Магнитогорск",
+        "team": "tema"
+    },
+    {
+        "first_name": "adfa",
+        "last_name": "asdf",
+        "middle_name": "asdf",
+        "birth_date": "2026-09-01",
+        "sex": "M",
+        "sport": "swimming",
+        "rank": "1y",
+        "city": "Магнитогорск",
+        "team": "tema"
+    },
+    {
+        "first_name": "asdf",
+        "last_name": "asdf",
+        "middle_name": "asdf",
+        "birth_date": "2026-09-03",
+        "sex": "M",
+        "sport": "football",
+        "rank": "none",
+        "city": "",
+        "team": ""
+    }
+]
