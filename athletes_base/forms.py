@@ -46,6 +46,32 @@ class AthleteForm(forms.Form):
     city = forms.CharField(label="Город", max_length=100, required=False)
     team = forms.CharField(label="Клуб / Команда", max_length=150, required=False)
 
+    def _check_digit(self, value):
+        return any(n.isdigit() for n in value)
+
+    def clean_first_name(self):
+        value = self.cleaned_data.get('first_name')
+        if self._check_digit(value):
+            raise ValidationError("В поле Имя не должно быть чисел")
+        return value
+
+    def clean_last_name(self):
+        value = self.cleaned_data.get('last_name')
+        if self._check_digit(value):
+            raise ValidationError("В поле Фамилия не должно быть чисел")
+        return value
+
+    def clean_middle_name(self):
+        value = self.cleaned_data.get('middle_name')
+        if self._check_digit(value):
+            raise ValidationError("В поле Отчество не должно быть чисел")
+        return value
+
+    def clean_city(self):
+        value = self.cleaned_data.get('city')
+        if self._check_digit(value):
+            raise ValidationError("В поле Город не должно быть чисел")
+        return value
 
     def clean_birth_date(self):
         birth_date_val = self.cleaned_data.get('birth_date')
