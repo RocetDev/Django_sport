@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load athlete_tags %}
+
 
 {% block content %}
 <h2>Список спортсменов</h2>
@@ -16,13 +18,23 @@
             </tr>
         </thead>
         <tbody>
-            {% for athlete in athletes %}
+            <!-- {% for athlete in athletes %}
             <tr>
                 <td>{{ athlete.last_name }} {{ athlete.first_name }} {{ athlete.middle_name|default:"" }}</td>
                 <td>{{ athlete.birth_date }}</td>
                 <td>{% if athlete.sex == 'M' %}Муж{% else %}Жен{% endif %}</td>
                 <td>{{ athlete.sport }}</td>
                 <td>{{ athlete.rank }}</td>
+                <td>{{ athlete.team|default:"—" }}</td>
+            </tr>
+            {% endfor %} -->
+            {% for athlete in athletes %}
+            <tr>
+                <td>{{ athlete.last_name }} {{ athlete.first_name }} {{ athlete.middle_name|default:"" }}</td>
+                <td>{{ athlete.birth_date }}</td>
+                <td>{{ athlete.sex|human_sex }}</td>
+                <td>{{ athlete.sport|human_sport }}</td>
+                <td>{{ athlete.rank|human_rank }}</td>
                 <td>{{ athlete.team|default:"—" }}</td>
             </tr>
             {% endfor %}
