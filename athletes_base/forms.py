@@ -3,27 +3,7 @@ from datetime import date
 from django import forms
 from django.core.exceptions import ValidationError
 
-SEX_CHOICES = [
-    ("M", "Мужчина"),
-    ("F", "Женщина")
-]
-
-RANK_CHOICES = [
-    ('none', 'Без разряда'),
-    ('3y', '3-й юношеский'), ('2y', '2-й юношеский'), ('1y', '1-й юношеский'),
-    ('3', '3-й взрослый'), ('2', '2-й взрослый'), ('1', '1-й взрослый'),
-    ('KMS', 'КМС'), ('MS', 'МС'), ('MSMK', 'МСМК'),
-]
-
-SPORT_CHOICES = [
-    ('football', 'Футбол'),
-    ('basketball', 'Баскетбол'),
-    ('swimming', 'Плавание'),
-    ('athletics', 'Легкая атлетика'),
-    ('martial_arts', 'Единоборства'),
-    ('other', 'Другой вид спорта'),
-]
-
+from athletes_base.utils import SEX_CHOICES, SPORT_CHOICES, RANK_CHOICES
 
 class AthleteForm(forms.Form):
     first_name = forms.CharField(label="Имя", max_length=100)
