@@ -26,4 +26,4 @@ def write_base(data: list[dict]):
     init_base()
 
     with open(BASE_PATH, 'w', encoding='utf-8') as file:
-        json.dump(data, file, ensure_ascii=False, indent=4)
+        json.dump(data, file, ensure_ascii=False, indent=4, default=str)

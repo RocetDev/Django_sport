@@ -33,7 +33,7 @@ class AthleteForm(forms.Form):
             raise ValidationError("Дата рождения не может быть в будущем!")
         elif birth_date_val.year <= 1900:
             raise ValidationError("Столько не живут")
-        return birth_date_val.strftime("%Y-%m-%d")
+        return birth_date_val
 
 
 class JSONFileForm(forms.Form):

@@ -27,6 +27,16 @@
             <a href="{% url 'upload_file' %}">Загрузить JSON</a>
         </nav>
         
+        {% if messages %}
+            <ul class="messages" style="list-style: none; padding: 0;">
+                {% for message in messages %}
+                    <li {% if message.tags == 'error' %}style="color: red; font-weight: bold;"{% else %}style="color: green;"{% endif %}>
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
         {% block content %}
         {% endblock %}
     </div>

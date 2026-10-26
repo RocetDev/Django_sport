@@ -6,6 +6,15 @@
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
+    
+    <div style="margin: 10px 0;">
+        <label for="db_type">Тип хранилища:</label>
+        <select name="db_type" id="db_type">
+            <option value="database">SQLite</option>
+            <option value="json">JSON</option>
+        </select>
+    </div>
+
     <button type="submit">Загрузить</button>
 </form>
 {% endblock %}
