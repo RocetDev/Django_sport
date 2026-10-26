@@ -1,11 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Добавить нового спортсмена</h2>
+{% if is_edit %}
+    <h2>Редактировать спортсмена</h2>
+{% else %}
+    <h2>Добавить нового спортсмена</h2>
+{% endif %}
 
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Сохранить спортсмена</button>
+
+    {% if not is_edit %}
+    <div style="margin: 10px 0;">
+        <label for="db_type">Тип хранилища:</label>
+        <select name="db_type" id="db_type">
+            <option value="database">SQLite</option>
+            <option value="json">JSON</option>
+        </select>
+    </div>
+    {% endif %}
+
+    <button type="submit">{% if is_edit %}Сохранить изменения{% else %}Сохранить спортсмена{% endif %}</button>
 </form>
 {% endblock %}

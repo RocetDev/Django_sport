@@ -1,68 +1,24 @@
 [
     {
-        "first_name": "adfa",
-        "last_name": "asdf",
-        "middle_name": "asdf",
-        "birth_date": "2026-09-01",
-        "sex": "M",
-        "sport": "swimming",
-        "rank": "1y",
-        "city": "Магнитогорск",
-        "team": "tema"
-    },
-    {
-        "first_name": "adfa",
-        "last_name": "asdf",
-        "middle_name": "asdf",
-        "birth_date": "2026-09-01",
-        "sex": "M",
-        "sport": "swimming",
-        "rank": "1y",
-        "city": "Магнитогорск",
-        "team": "tema"
-    },
-    {
-        "first_name": "asdf",
-        "last_name": "asdf",
-        "middle_name": "asdf",
-        "birth_date": "2026-09-03",
+        "first_name": "Привем",
+        "last_name": "фыва",
+        "middle_name": "фыпфыв",
+        "birth_date": "2026-10-13",
         "sex": "M",
         "sport": "football",
         "rank": "none",
-        "city": "",
-        "team": ""
+        "city": "Магнитогорсе",
+        "team": "фыва"
     },
     {
-        "first_name": "adfa",
-        "last_name": "asdf",
-        "middle_name": "asdf",
-        "birth_date": "2026-09-01",
-        "sex": "M",
-        "sport": "swimming",
-        "rank": "1y",
-        "city": "Магнитогорск",
-        "team": "tema"
-    },
-    {
-        "first_name": "adfa",
-        "last_name": "asdf",
-        "middle_name": "asdf",
-        "birth_date": "2026-09-01",
-        "sex": "M",
-        "sport": "swimming",
-        "rank": "1y",
-        "city": "Магнитогорск",
-        "team": "tema"
-    },
-    {
-        "first_name": "asdf",
-        "last_name": "asdf",
-        "middle_name": "asdf",
-        "birth_date": "2026-09-03",
+        "first_name": "Привем",
+        "last_name": "фыва",
+        "middle_name": "фыпфыв",
+        "birth_date": "2026-10-13",
         "sex": "M",
         "sport": "football",
         "rank": "none",
-        "city": "",
-        "team": ""
+        "city": "Магнитогорсе",
+        "team": "фыва"
     }
 ]
