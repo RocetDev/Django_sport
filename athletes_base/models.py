@@ -28,6 +28,7 @@ class Athlete(models.Model):
     sport = models.CharField(max_length=20, choices=SPORT_CHOICES, verbose_name="Вид спорта")
     rank = models.CharField(max_length=5, choices=RANK_CHOICES, default='none', verbose_name="Разряд / Звание")
     city = models.CharField(max_length=100, blank=True, null=True, verbose_name="Город")
+    country = models.CharField(max_length=100, blank=True, null=True, verbose_name="Страна")
     team = models.CharField(max_length=150, blank=True, null=True, verbose_name="Клуб / Команда")
 
     def __str__(self):

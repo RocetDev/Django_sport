@@ -24,6 +24,7 @@ class AthleteForm(forms.Form):
     sport = forms.ChoiceField(label="Вид спорта", choices=SPORT_CHOICES)
     rank = forms.ChoiceField(label="Разряд / Звание", choices=RANK_CHOICES)
     city = forms.CharField(label="Город", max_length=100, required=False)
+    country = forms.CharField(label="Страна", max_length=100, required=False)
     team = forms.CharField(label="Клуб / Команда", max_length=150, required=False)
 
     def _check_digit(self, value):

@@ -40,6 +40,7 @@
                 <td>{{ athlete.get_sport_display }}</td>
                 <td>{{ athlete.get_rank_display }}</td>
                 <td>{{ athlete.city|default:"—" }}</td>
+                <td>{{ athlete.country|default:"—" }}</td>
                 <td>{{ athlete.team|default:"—" }}</td>
                 <td>
                     <a href="{% url 'edit_form' athlete.id %}">Редактировать</a>
@@ -87,6 +88,7 @@
                                 + '<td>' + a.sport + '</td>'
                                 + '<td>' + a.rank + '</td>'
                                 + '<td>' + a.city + '</td>'
+                                + '<td>' + a.country + '</td>'
                                 + '<td>' + a.team + '</td>'
                                 + '<td><a href="/edit/' + a.id + '/">Редактировать</a> '
                                 + '<form method="post" action="/delete/' + a.id + '/" style="display:inline;">'
