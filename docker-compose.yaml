@@ -1,0 +1,32 @@
+services:
+  webapp:
+    build: .
+    container_name: django-athletes-webapp
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./jsondb:/app/database
+      - ./athletes_base/templates:/app/athletes_base/templates
+      - ./staticfiles:/app/staticfiles
+    env_file:
+      - ./.env
+    depends_on:
+      postgresdb:
+        condition: service_healthy
+    
+  postgresdb:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    container_name: postgres-db
+    # ports:
+      # - "5432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5

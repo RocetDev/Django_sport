@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/6.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,14 +19,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=lw+qq$5gj$6laal62nzs4@lllq@@fk)d-s()#0zl*d+@i^wyv'
+# # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = 'django-insecure-=lw+qq$5gj$6laal62nzs4@lllq@@fk)d-s()#0zl*d+@i^wyv'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'dev-only-key')                                                                                                                             
+DEBUG = os.environ.get('DJANGO_DEBUG', '1') == '1'                                                                                                                                        
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 
 # Application definition
 
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -75,8 +80,12 @@ WSGI_APPLICATION = 'athletes_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_DB', 'altheledb'),                                                                                                                                  
+        'USER': os.environ.get('POSTGRES_USER', 'user'),                                                                                                                                     
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', ''),                                                                                                                                 
+        'HOST': os.environ.get('POSTGRES_HOST', 'postgresdb'),  # имя сервиса из compose                                                                                                     
+        'PORT': os.environ.get('POSTGRES_PORT', '5432'),                                                                       
     }
 }
 
@@ -116,7 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
