@@ -4,5 +4,13 @@ asgiref==3.12.1
     # via django
 django==6.1.2
     # via 3lab (pyproject.toml)
+gunicorn==23.0.0
+    # via 3lab (pyproject.toml)
+packaging==26.3
+    # via gunicorn
+psycopg2-binary==2.9.10
+    # via 3lab (pyproject.toml)
 sqlparse==0.6.0
     # via django
+whitenoise==6.12.0
+    # via 3lab (pyproject.toml)
