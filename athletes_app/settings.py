@@ -86,7 +86,11 @@ DATABASES = {
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', ''),                                                                                                                                 
         'HOST': os.environ.get('POSTGRES_HOST', 'postgresdb'),  # имя сервиса из compose                                                                                                     
         'PORT': os.environ.get('POSTGRES_PORT', '5432'),                                                                       
-    }
+    },
+    'legacy_sqlite': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    },
 }
 
 
